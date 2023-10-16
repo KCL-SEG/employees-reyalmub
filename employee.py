@@ -31,7 +31,7 @@ class Employee:
                 description += f'receives a commission for {str(self.contractNumber)} contract(s) at {str(self.comPerConstract)}/contract. '
             else: 
                 description += f'receives a {self.commissionType} commission of {str(self.bonus)}.'
-        description += f'Their total pay is {str(self.get_pay())}'
+        description += f'Their total pay is {str(self.wage)}'
         return description 
 
 
