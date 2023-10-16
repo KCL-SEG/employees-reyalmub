@@ -13,20 +13,20 @@ class Employee:
         self.comPerConstract = 0
         self.bonus = 0
     def get_pay(self):
-        if self.contract.equals("hourly"):
+        if self.contract is "contract":
             self.salary = self.hrs * self.salary
-        if self.commissionType.equals("contract"):
+        if self.commissionType is "contract":
             self.salary += (self.contractNumber * self.comPerConstract)
-        if self.commissionType.equals("bonus"):
+        if self.commissionType is "bonus":
             self.salary += self.bonus
         return self.salary
 
     def __str__(self):
         description = f'{self.name} works on a {self.contract} of {self.salary} '
-        if self.contract.equals("contract"):
+        if self.contract is "contract":
             description += f'hours at {str(self.hrs)}/hour. '
         if self.commission:
-            if self.commission.equals("contract"):
+            if self.commission is "contract":
                 description += f'receives a commission for {str(self.contractNumber)} contract(s) at {str(self.comPerConstract)}/contract. '
             else: 
                 description += f'receives a {self.commissionType} commission of {str(self.bonus)}.'
