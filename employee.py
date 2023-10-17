@@ -25,18 +25,19 @@ class Employee:
         return self.wage
 
     def __str__(self):
-        description = f'{self.name} works on a {self.contract} of {self.salary}. '
+        description = f'{self.name} works on a {self.contract} of {self.salary}'
         if self.contract == "contract":
-            description += f'hours at {str(self.hrs)}/hour. '
+            description += f' hours at {str(self.hrs)}/hour'
         if self.commission:
             if self.commissionType == "contract":
-                description += f'and receives a commission for {str(self.contractNumber)} contract(s) at {str(self.comPerConstract)}/contract. '
+                description += f' and receives a commission for {str(self.contractNumber)} contract(s) at {str(self.comPerConstract)}/contract'
             else: 
-                description += f'and receives a {self.commissionType} commission of {str(self.bonus)}.'
+                description += f' and receives a {self.commissionType} commission of {str(self.bonus)}'
 
-        description += f'Their total pay is {str(self.wage)}.'
-
+        description += f'. Their total pay is {str(self.wage)}.'
+    
         return description 
+    
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
@@ -58,5 +59,3 @@ robbie.get_pay()
 ariel = Employee('Ariel',"contract",120,30,True,"bonus",bonus=600)
 ariel.get_pay()
 
-print(billie)
-print(billie.get_pay())
