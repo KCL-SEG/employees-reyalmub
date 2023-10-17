@@ -6,13 +6,14 @@ class Employee:
         self.name = name
         self.contract = contract
         self.salary = salary
-        self.hrs = 0
-        self.commission = False
-        self.commissionType = ""
-        self.contractNumber = 0
-        self.comPerConstract = 0
-        self.bonus = 0
+        self.hrs = hrs
+        self.commission = commission
+        self.commissionType = commissionType
+        self.contractNumber = contractNumber
+        self.comPerConstract = comPerConstract
+        self.bonus = bonus
         self.wage = self.salary
+
     def get_pay(self):
         if self.contract == "contract":
             self.wage = self.hrs * self.salary
@@ -20,6 +21,7 @@ class Employee:
             self.wage = self.wage + (self.contractNumber * self.comPerConstract)
         if self.commissionType == "bonus":
             self.wage += self.bonus
+        
         return self.wage
 
     def __str__(self):
@@ -31,12 +33,14 @@ class Employee:
                 description += f'receives a commission for {str(self.contractNumber)} contract(s) at {str(self.comPerConstract)}/contract. '
             else: 
                 description += f'receives a {self.commissionType} commission of {str(self.bonus)}.'
+
         description += f'Their total pay is {str(self.wage)}'
+
         return description 
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
-billie = Employee('Billie',"monthly",4000)
+billie = Employee('Billie',"monthly salary",4000)
 
 # Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
 charlie = Employee('Charlie',"contract",100,25)
@@ -52,4 +56,3 @@ robbie = Employee('Robbie',"monthly salary",2000,commission=True, commissionType
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel',"contract",120,30,True,"bonus",bonus=600)
-
