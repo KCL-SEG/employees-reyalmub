@@ -18,11 +18,12 @@ class Employee:
         if self.contract == "contract":
             self.wage = self.hrs * self.salary
         if self.commissionType == "contract":
-            self.wage = self.wage + (self.contractNumber * self.comPerConstract)
+            self.wage += (self.contractNumber * self.comPerConstract)
         if self.commissionType == "bonus":
             self.wage += self.bonus
         
         return self.wage
+    
 
     def __str__(self):
         description = f'{self.name} works on a {self.contract} of {self.salary}'
@@ -41,21 +42,19 @@ class Employee:
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
-billie = Employee('Billie',"monthly salary",4000)
-billie.get_pay()
-# Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
-charlie = Employee('Charlie',"contract",100,25)
-charlie.get_pay()
-# Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
-renee = Employee('Renee',"monthly salary",3000,commission=True, commissionType="contract",contractNumber= 4, comPerConstract=200)
-renee.get_pay()
-# Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
-jan = Employee('Jan',"contract",150,25,True,"contract",3,220)
-jan.get_pay()
-# Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
-robbie = Employee('Robbie',"monthly salary",2000,commission=True, commissionType="bonus",bonus=1500)
-robbie.get_pay()
-# Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
-ariel = Employee('Ariel',"contract",120,30,True,"bonus",bonus=600)
-ariel.get_pay()
+billie = Employee('Billie', "monthly salary", 4000)
 
+# Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
+charlie = Employee('Charlie', "contract", 100, 25)
+
+# Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
+renee = Employee('Renee', "monthly salary", 3000, commission=True, commissionType="contract", contractNumber= 4, comPerConstract= 200)
+
+# Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
+jan = Employee('Jan', "contract", 150, 25, True, "contract", 3, 220)
+
+# Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
+robbie = Employee('Robbie', "monthly salary", 2000, commission=True, commissionType="bonus", bonus=1500)
+
+# Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
+ariel = Employee('Ariel', "contract", 120, 30, True, "bonus", bonus=600)
