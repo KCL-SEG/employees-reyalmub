@@ -25,7 +25,7 @@ class Employee:
         return self.wage
 
     def __str__(self):
-        description = f'{self.name} works on a {self.contract} of {self.salary} '
+        description = f'{self.name} works on a {self.contract} of {self.salary}. '
         if self.contract == "contract":
             description += f'hours at {str(self.hrs)}/hour. '
         if self.commission:
@@ -34,7 +34,7 @@ class Employee:
             else: 
                 description += f'and receives a {self.commissionType} commission of {str(self.bonus)}.'
 
-        description += f'Their total pay is {str(self.wage)}'
+        description += f'Their total pay is {str(self.wage)}.'
 
         return description 
 
@@ -57,3 +57,6 @@ robbie.get_pay()
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel',"contract",120,30,True,"bonus",bonus=600)
 ariel.get_pay()
+
+print(billie)
+print(billie.get_pay())
